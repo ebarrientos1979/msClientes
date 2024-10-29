@@ -1,12 +1,13 @@
 package pe.edu.nh.msClientes.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClienteDTO {
+public class ClienteDTO implements Serializable {
 	private Integer clienteId;
 	private String nombre;
 	private String apePaterno;
