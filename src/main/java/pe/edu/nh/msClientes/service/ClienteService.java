@@ -20,10 +20,17 @@ public class ClienteService {
 	}
 	
 	public List<ClienteDTO> getAllClientes(){
-		List<Cliente> clientes = clienteRepository.findAll();
+		List<Cliente> clientes = clienteRepository.findAll();		
 		List<ClienteDTO> clienteDTOs = clientes.stream().
-				map(cliente -> modelMapper.map(cliente, ClienteDTO.class)).toList();
+				map(cliente -> this.modelMapper.map(cliente, ClienteDTO.class)).toList();
 		return clienteDTOs;
 	}
+	
+	public ClienteDTO saveCliente(ClienteDTO clienteDto) {
+		Cliente c = this.modelMapper.map(clienteDto, Cliente.class);		
+		return this.modelMapper.map(this.clienteRepository.save(c), ClienteDTO.class);		
+	}
+	
+	
 	
 }

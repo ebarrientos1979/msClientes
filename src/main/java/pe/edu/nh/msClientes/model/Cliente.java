@@ -7,10 +7,8 @@ import lombok.*;
 
 @Entity
 @Table(name="Cliente")
-@Getter
-@Setter
+@Data
 @ToString
-@RequiredArgsConstructor
 public class Cliente {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -22,5 +20,5 @@ public class Cliente {
 	private String telefono;
 	private String email;
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date fechaRegistro;
+	private Date fechaRegistro = new Date();
 }

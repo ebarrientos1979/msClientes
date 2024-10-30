@@ -7,7 +7,8 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClienteDTO implements Serializable {
+@ToString
+public class ClienteDTO implements Serializable {	
 	private Integer clienteId;
 	private String nombre;
 	private String apePaterno;
